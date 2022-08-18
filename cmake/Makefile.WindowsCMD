@@ -1,0 +1,10 @@
+all: create_folder compile link
+
+create_folder:
+	if not exist "build" mkdir build
+
+compile:
+	g++ -c ./src/Main.cpp -I C:/SFML-2.5.1/include -o ./build/Main.o
+
+link:
+	g++ ./build/Main.o -L C:/SFML-2.5.1/lib -o ./Game -lsfml-graphics -lsfml-window -lsfml-system -lopengl32 -lwinmm -lgdi32

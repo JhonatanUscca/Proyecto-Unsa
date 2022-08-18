@@ -1,0 +1,10 @@
+all: mkdir compile link
+
+mkdir:
+	mkdir -p ./build
+
+compile:
+	g++ -c ./src/Main.cpp -I ~/.local/include/SFML/include -o ./build/Main.o
+
+link:
+	g++ ./build/Main.o -L ~/.local/lib/SFML/lib -o ./Game.exe -lsfml-graphics -lsfml-window -lsfml-system -lsfml-network
