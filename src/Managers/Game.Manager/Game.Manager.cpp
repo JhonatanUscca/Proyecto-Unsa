@@ -1,6 +1,6 @@
 #include "./Game.Manager.h"
 
-unsigned int const FPS = 10;
+unsigned int const FPS = 20;
 sf::Color *const BG_COLOR = new sf::Color(255, 255, 255, 255);
 
 GameManager::GameManager(std::unique_ptr<sf::VideoMode> &_size, std::string _name)
@@ -13,6 +13,7 @@ GameManager::GameManager(std::unique_ptr<sf::VideoMode> &_size, std::string _nam
 
 void GameManager::draw()
 {
+    sf::Event *event = new sf::Event;
     this->window->clear();
     SceneManager::get()->top()->draw();
     this->window->display();
@@ -29,11 +30,11 @@ void GameManager::events()
     sf::Event *event = new sf::Event;
     while (this->window->pollEvent(*event))
     {
-        if (this->window->hasFocus())
-        {
-            this->close(event);
-            SceneManager::get()->top()->events(event);
-        }
+        this->close(event);
+    }
+    if (this->window->hasFocus())
+    {
+        SceneManager::get()->top()->events(event);
     }
 }
 

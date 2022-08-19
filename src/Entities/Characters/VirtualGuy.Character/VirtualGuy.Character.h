@@ -1,6 +1,9 @@
 #ifndef VIRTUALGUYCHARACTER_H
 #define VIRTUALGUYCHARACTER_H
 
+#include <SFML/Graphics.hpp>
+#include <map>
+
 #include "./../Character.h"
 
 class VirtualGuyCharacter : public Character

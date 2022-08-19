@@ -1,12 +1,18 @@
 #include "./Entity.Factory.h"
 
+std::map<std::string, sf::Keyboard::Key> controls_2;
+
 Entity *EntityFactory::getEntity(int _entity) {
+    std::map<std::string, sf::Keyboard::Key> controls_1;
+    controls_1.insert(std::pair<std::string, sf::Keyboard::Key>("left", sf::Keyboard::A));
+    controls_1.insert(std::pair<std::string, sf::Keyboard::Key>("right", sf::Keyboard::D));
+    controls_1.insert(std::pair<std::string, sf::Keyboard::Key>("up", sf::Keyboard::W));
     Entity *ent;
     switch (_entity)
     {
-    case gm::Entity::VirtualGuyCharacter:
+    case gm::Entity::VirtualGuyCharacter1:
     {
-        //obj = new BobCharacter();
+        ent = new VirtualGuyCharacter(&controls_1);
         break;
     }
     case gm::Entity::StoneTerrain1:

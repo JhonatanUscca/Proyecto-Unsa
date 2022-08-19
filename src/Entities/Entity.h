@@ -11,6 +11,7 @@ private:
     sf::Texture *texture;
     sf::Sprite *sprite;
     std::map<std::string, std::string> *messages;
+    sf::Vector2f direction;
 
 public:
     Entity(std::string);
@@ -22,9 +23,11 @@ public:
     void setSprite(std::string);
     void setSprite(sf::Sprite *);
     void setSprite();
-    bool isCollitionWith(Entity *);
+    void setDirection(sf::Vector2f);
+    sf::Vector2f getDirection();
     std::string getMessage(std::string);
     void setMessage(std::string, std::string);
+    virtual sf::Vector2f isCollitionWith(Entity *, sf::Vector2f);
     virtual void draw(sf::RenderWindow *) = 0;
     virtual void events(sf::Event *) = 0;
 };
@@ -32,10 +35,14 @@ public:
 namespace gm {
     namespace Entity {
         enum {
-            VirtualGuyCharacter = 1,
-            PinkManCharacter = 2,
-            NinjaForgCharacter = 3,
-            maskDudeCharacter = 4,
+            VirtualGuyCharacter1 = 1,
+            PinkManCharacter1 = 2,
+            NinjaForgCharacter1 = 3,
+            maskDudeCharacter1 = 4,
+            VirtualGuyCharacter2 = 14,
+            PinkManCharacter2 = 15,
+            NinjaForgCharacter2 = 16,
+            maskDudeCharacter2 = 17,
 
             StoneTerrain1 = 5,
             StoneTerrain2 = 6,

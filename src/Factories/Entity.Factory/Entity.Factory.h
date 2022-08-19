@@ -1,7 +1,9 @@
 #ifndef ENTITYFACTORY_H
 #define ENTITYFACTORY_H
 
+#include <map>
 #include "./../../Entities/Entity.h"
+#include "./../../Entities/Characters/VirtualGuy.Character/VirtualGuy.Character.h"
 #include "./../../Entities/Terrain/Stone.Terrain/Stone.Terrain.h"
 
 class EntityFactory

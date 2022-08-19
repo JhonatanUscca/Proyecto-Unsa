@@ -1,10 +1,12 @@
 #include "./VirtualGuy.Character.h"
 
-VirtualGuyCharacter::VirtualGuyCharacter(std::map<std::string, sf::Keyboard::Key> *_controls): Character(16.f, 140.f, _controls) {
-    sf::Texture *_texture = new sf::Texture;
+VirtualGuyCharacter::VirtualGuyCharacter(std::map<std::string, sf::Keyboard::Key> *_controls): Character(16.f, 140.f, "Virtual Guy", _controls) {
+    
 }
 
-VirtualGuyCharacter::~VirtualGuyCharacter() {}
+VirtualGuyCharacter::~VirtualGuyCharacter() {
+    delete this;
+}
 
 void VirtualGuyCharacter::draw(sf::RenderWindow * _window) {
     Character::draw(_window);

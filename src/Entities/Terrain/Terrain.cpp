@@ -1,6 +1,6 @@
 #include "./Terrain.h"
 
-Terrain::Terrain(bool _canDamage) : canDamage(_canDamage), Entity("Tarrain") {
+Terrain::Terrain(bool _canDamage) : canDamage(_canDamage), Entity("Terrain") {
     this->setTexture("./src/Assets/Textures/Terrain/Terrain (16x16).png");
 }
 

@@ -16,6 +16,7 @@ private:
 public:
     MeshTerrain();
     ~MeshTerrain();
+    std::vector<std::vector<Entity *> *> getMesh();
     void setMesh(int[16][20]);
     void events(sf::Event *);
     void draw(sf::RenderWindow *);
